@@ -35,7 +35,7 @@ gulp.task('build', function() {
 
 // ローカルサーバーの起動
 gulp.task('server', function() {
-  node(['./server.js']);
+  node(['./server.js'],[],[]);
 });
 
 // ファイル監視
@@ -47,4 +47,4 @@ gulp.task('watch', function() {
 });
 
 // gulpコマンドで起動したときのデフォルトタスク
-gulp.task('default', ['build', 'watch', 'browser-sync']);
+gulp.task('default', ['server','build', 'watch', 'browser-sync']);

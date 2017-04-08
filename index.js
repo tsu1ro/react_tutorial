@@ -1,24 +1,21 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 class CommentBox extends React.Component {
-	constructor(props){
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render(){
-		return (
-			<div className='commentBox'>
-				<h2>Comments</h2>
-				<CommentList />
-				<CommentForm />
-				hello world
-			</div>
-		);
-	}
+  render() {
+    return(
+      <div className='commentBox'>
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
 }
 
-React.render(
-	<CommentBox />,
-	document.getElementById('container')
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('container')
 );
-

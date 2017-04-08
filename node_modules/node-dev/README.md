@@ -123,26 +123,30 @@ If your app is not listening for these signals `process.exit(0)` will be called
 immediately. If a listener is registered, node-dev assumes that your app will
 exit on its own once it is ready.
 
+### Ignore paths
+
+If you’d like to ignore certain paths or files from triggering a restart simply
+list them in the `.node-dev.json` configuration under `"ignore"`, e.g.
+
+```json
+{
+  "ignore": [
+    "client/scripts",
+    "shared/module.js"
+  ]
+}
+
+```
+
+This might be useful when you are running a [universal][universal-javascript]
+(isomorphic) web app that shares modules across the server and client, e.g.
+[React.js](react) components for server-side rendering, which you don’t want to trigger a
+server restart when changed, since it introduces an unnecessary delay.
+
 ## License
 
-### The MIT License (MIT)
+MIT
 
-Copyright (c) 2014 Felix Gnass
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+[react]: http://facebook.github.io/react/
+[universal-javascript]: https://medium.com/@mjackson/universal-javascript-4761051b7ae9

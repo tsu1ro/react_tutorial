@@ -16,33 +16,26 @@ var _react = require('react');
 var _react2 = _interopRequireDefault(_react);
 
 var CommentBox = (function (_React$Component) {
-	_inherits(CommentBox, _React$Component);
+  _inherits(CommentBox, _React$Component);
 
-	function CommentBox(props) {
-		_classCallCheck(this, CommentBox);
+  function CommentBox(props) {
+    _classCallCheck(this, CommentBox);
 
-		_get(Object.getPrototypeOf(CommentBox.prototype), 'constructor', this).call(this, props);
-	}
+    _get(Object.getPrototypeOf(CommentBox.prototype), 'constructor', this).call(this, props);
+  }
 
-	_createClass(CommentBox, [{
-		key: 'render',
-		value: function render() {
-			return _react2['default'].createElement(
-				'div',
-				{ className: 'commentBox' },
-				_react2['default'].createElement(
-					'h2',
-					null,
-					'Comments'
-				),
-				_react2['default'].createElement(CommentList, null),
-				_react2['default'].createElement(CommentForm, null),
-				'hello world'
-			);
-		}
-	}]);
+  _createClass(CommentBox, [{
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'div',
+        { className: 'commentBox' },
+        'Hello, world! I am a CommentBox.'
+      );
+    }
+  }]);
 
-	return CommentBox;
+  return CommentBox;
 })(_react2['default'].Component);
 
 _react2['default'].render(_react2['default'].createElement(CommentBox, null), document.getElementById('container'));
